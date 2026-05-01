@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium English Sentence Patterns</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg-dark: #050508;
+    --card-bg: #0d0f1c;
+    --aqua: #00f0ff;
+    --gold: #ffcf54;
+    --green: #00ff88;
+    --purple: #8a2be2;
+    --pink: #ff007f;
+    --text-main: #e2e8f0;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    text-align: center;
+    padding: 20px 20px;
+    background: linear-gradient(135deg, #020c1b, #0a192f, #112240);
+    border-bottom: 2px solid var(--aqua);
+    box-shadow: 0 4px 15px rgba(0, 240, 255, 0.2);
+    overflow: hidden;
+  }
+
+  .underwater {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .fish { position: absolute; font-size: 1.5rem; animation: swim linear infinite; opacity: 0.6; display: inline-block; }
+  .fish1 { top: 10px; left: -50px; animation-duration: 18s; transform: scaleX(-1); }
+  .fish2 { top: 40px; right: -50px; animation: swim-reverse 20s linear infinite; transform: scaleX(1); }
+  .bubble { position: absolute; font-size: 1rem; bottom: -20px; animation: rise infinite ease-in; opacity: 0.5; }
+  .b1 { left: 20%; animation-duration: 4s; }
+  .b2 { left: 50%; animation-duration: 5s; animation-delay: 1s; }
+  .b3 { left: 80%; animation-duration: 3.5s; }
+  .weed { position: absolute; bottom: -5px; font-size: 2rem; animation: wave 5s ease-in-out infinite alternate; opacity: 0.4; transform-origin: bottom; }
+  .w1 { left: 10%; }
+  .w2 { right: 15%; animation-delay: 0.5s; }
+
+  @keyframes swim { 0% { left: -50px; transform: translateY(0) scaleX(-1); } 50% { transform: translateY(-10px) scaleX(-1); } 100% { left: 100%; transform: translateY(0) scaleX(-1); } }
+  @keyframes swim-reverse { 0% { right: -50px; transform: translateY(0) scaleX(1); } 50% { transform: translateY(10px) scaleX(1); } 100% { right: 100%; transform: translateY(0) scaleX(1); } }
+  @keyframes rise { 0% { bottom: -20px; transform: translateX(0); } 50% { transform: translateX(10px); } 100% { bottom: 100px; transform: translateX(-10px); opacity: 0; } }
+  @keyframes wave { 0% { transform: rotate(-5deg); } 100% { transform: rotate(5deg); } }
+
+  h1 {
+    position: relative;
+    z-index: 1;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2px;
+    background: linear-gradient(90deg, var(--aqua), var(--green), var(--gold), var(--pink), var(--aqua));
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textGradient 4s linear infinite;
+  }
+  @keyframes textGradient { to { background-position: 300% center; } }
+
+  .author {
+    position: relative;
+    z-index: 1;
+    font-family: 'Fira Code', monospace;
+    background: linear-gradient(90deg, var(--gold), var(--pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .header-actions {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .hdr-btn {
+    background: rgba(0,240,255,0.1);
+    border: 1px solid var(--aqua);
+    color: var(--aqua);
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s;
+  }
+  .hdr-btn:hover { background: var(--aqua); color: #000; }
+  .hdr-btn.gold { border-color: var(--gold); color: var(--gold); background: rgba(255,207,84,0.1); }
+  .hdr-btn.gold:hover { background: var(--gold); color: #000; }
+
+  .nav-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 15px;
+  }
+  .nav-btn {
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+  }
+  .nav-btn:hover, .nav-btn.active {
+    background: linear-gradient(45deg, var(--purple), var(--aqua));
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 0 10px var(--aqua), inset 0 0 5px rgba(255,255,255,0.5);
+  }
+
+  .level-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 15px 12px;
+    flex-wrap: wrap;
+  }
+  .level-btn {
+    background: rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #888;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .level-btn.unlocked { color: var(--text-main); border-color: rgba(0,240,255,0.3); }
+  .level-btn.active.unlocked {
+    background: linear-gradient(45deg, #1a0533, #0a2040);
+    border-color: var(--aqua);
+    color: var(--aqua);
+    box-shadow: 0 0 8px rgba(0,240,255,0.4);
+  }
+  .level-btn.locked { cursor: not-allowed; opacity: 0.5; }
+  .lock-icon { font-size: 0.7rem; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+  .section { display: none; animation: fadeIn 0.5s ease; }
+  .section.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+
+  .flashcard-wrapper {
+    position: relative;
+    border-radius: 16px;
+    padding: 3px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .flashcard-wrapper:hover { transform: translateY(-5px); }
+  .flashcard-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 200%; height: 200%;
+    background: conic-gradient(from 0deg, transparent 70%, var(--aqua) 80%, var(--purple) 100%);
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .flashcard-wrapper.active { box-shadow: 0 0 20px rgba(138,43,226,0.4), 0 0 40px rgba(0,240,255,0.2); }
+  .flashcard-wrapper.active::before { opacity: 1; animation: rotateLight 3s linear infinite; }
+  @keyframes rotateLight { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+  .flashcard {
+    background-color: var(--card-bg);
+    background-image:
+      radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+      radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+      radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
+      radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+      radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+      radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0)),
+      linear-gradient(135deg, #090a10 0%, #170e2b 50%, #0d1224 100%);
+    background-repeat: repeat;
+    background-size: 200px 200px, 200px 200px, 200px 200px, 200px 200px, 200px 200px, 200px 200px, 100% 100%;
+    animation: galaxyMove 40s linear infinite;
+    border-radius: 14px;
+    padding: 20px;
+    height: 100%;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  @keyframes galaxyMove {
+    from { background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; }
+    to { background-position: 200px 200px, -200px 200px, 200px -200px, -200px -200px, 0 200px, 200px 0, 0 0; }
+  }
+
+  .pattern-num { font-family: 'Fira Code', monospace; font-size: 0.8rem; color: var(--aqua); }
+  .pattern-eng {
+    font-size: 1.2rem; font-weight: 700; color: #fff;
+    background: rgba(0,0,0,0.4); backdrop-filter: blur(5px);
+    padding: 10px 15px; border-left: 3px solid var(--aqua); border-radius: 4px;
+  }
+  .pattern-ben { color: var(--gold); font-size: 0.95rem; text-shadow: 1px 1px 2px #000; }
+  .pattern-pro { color: #aaa; font-style: italic; font-size: 0.85rem; text-shadow: 1px 1px 2px #000; }
+
+  .examples-container { display: none; margin-top: 10px; padding-top: 15px; border-top: 1px dashed rgba(255,255,255,0.2); }
+  .flashcard-wrapper.active .examples-container { display: flex; flex-direction: column; gap: 10px; animation: fadeIn 0.4s ease; }
+  .example-item {
+    background: rgba(0,0,0,0.5); border-left: 2px solid var(--green);
+    padding: 8px 12px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; gap: 10px;
+  }
+  .example-text { font-size: 0.85rem; color: #e2e8f0; }
+
+  .audio-btn {
+    background: rgba(0,0,0,0.5); border: 1px solid var(--aqua); color: var(--aqua);
+    border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: 0.3s; box-shadow: 0 0 5px rgba(0,240,255,0.2); flex-shrink: 0;
+  }
+  .audio-btn:hover { background: var(--aqua); color: #000; box-shadow: 0 0 10px var(--aqua); }
+  .main-audio-btn {
+    width: 100%; border-radius: 8px; margin-top: auto; padding: 10px; font-weight: 600;
+    text-transform: uppercase; font-size: 0.8rem; border: 1px solid var(--purple); color: var(--purple);
+  }
+  .main-audio-btn:hover { background: var(--purple); color: #fff; box-shadow: 0 0 15px var(--purple); border-color: var(--purple); }
+
+  .quiz-launch-btn {
+    display: block;
+    margin: 20px auto 0;
+    padding: 12px 35px;
+    background: linear-gradient(45deg, var(--purple), var(--pink));
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 1px;
+    box-shadow: 0 0 20px rgba(138,43,226,0.5);
+    transition: all 0.3s;
+  }
+  .quiz-launch-btn:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(255,0,127,0.5); }
+
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(6px);
+  }
+  .modal-overlay.open { display: flex; }
+  .modal-box {
+    background: linear-gradient(135deg, #0a0f1e, #110a22);
+    border: 1px solid var(--aqua);
+    border-radius: 20px;
+    padding: 35px;
+    width: 90%;
+    max-width: 480px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 0 40px rgba(0,240,255,0.2), 0 0 80px rgba(138,43,226,0.15);
+    animation: fadeIn 0.3s ease;
+    position: relative;
+  }
+  .modal-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, var(--aqua), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+  }
+  .modal-close {
+    position: absolute;
+    top: 15px; right: 18px;
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  .modal-close:hover { color: var(--pink); }
+
+  .form-group { margin-bottom: 16px; }
+  .form-group label { display: block; font-size: 0.8rem; color: var(--aqua); margin-bottom: 6px; font-weight: 600; letter-spacing: 0.5px; }
+  .form-group input {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(0,240,255,0.3);
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: var(--text-main);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    transition: border-color 0.3s;
+    outline: none;
+  }
+  .form-group input:focus { border-color: var(--aqua); box-shadow: 0 0 8px rgba(0,240,255,0.3); }
+  .form-submit {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, var(--purple), var(--aqua));
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: all 0.3s;
+    box-shadow: 0 0 15px rgba(0,240,255,0.2);
+  }
+  .form-submit:hover { transform: scale(1.02); box-shadow: 0 0 25px rgba(0,240,255,0.4); }
+  .form-link { text-align: center; margin-top: 14px; font-size: 0.82rem; color: #888; }
+  .form-link a { color: var(--aqua); cursor: pointer; text-decoration: underline; }
+  .form-error { color: var(--pink); font-size: 0.8rem; margin-top: 8px; text-align: center; display: none; }
+  .form-success { color: var(--green); font-size: 0.8rem; margin-top: 8px; text-align: center; display: none; }
+
+  /* ========== QUIZ MODAL - ENHANCED ========== */
+  .quiz-modal-box { max-width: 640px; }
+
+  .quiz-type-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+  }
+  .badge-eng2ben {
+    background: rgba(0,240,255,0.12);
+    color: var(--aqua);
+    border: 1px solid rgba(0,240,255,0.3);
+  }
+  .badge-ben2eng {
+    background: rgba(0,255,136,0.12);
+    color: var(--green);
+    border: 1px solid rgba(0,255,136,0.3);
+  }
+  .badge-pat2eng {
+    background: rgba(255,207,84,0.12);
+    color: var(--gold);
+    border: 1px solid rgba(255,207,84,0.3);
+  }
+
+  .quiz-question {
+    background: rgba(0,0,0,0.4);
+    border-left: 3px solid var(--aqua);
+    padding: 14px 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #fff;
+    line-height: 1.6;
+  }
+  .quiz-q-num { font-family: 'Fira Code', monospace; color: var(--gold); font-size: 0.75rem; margin-bottom: 6px; }
+  .quiz-pattern-hint {
+    margin-top: 10px;
+    padding: 6px 10px;
+    background: rgba(138,43,226,0.15);
+    border-radius: 6px;
+    font-size: 0.78rem;
+    color: #b088e8;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .quiz-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+  .quiz-option {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 10px;
+    padding: 12px 16px;
+    cursor: pointer;
+    font-size: 0.88rem;
+    transition: all 0.25s;
+    text-align: left;
+    color: var(--text-main);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+  }
+  .quiz-option:hover { border-color: var(--aqua); background: rgba(0,240,255,0.07); }
+  .quiz-option.selected { border-color: var(--purple); background: rgba(138,43,226,0.15); color: #fff; }
+  .quiz-option.correct { border-color: var(--green) !important; background: rgba(0,255,136,0.15) !important; color: var(--green) !important; }
+  .quiz-option.wrong { border-color: var(--pink) !important; background: rgba(255,0,127,0.15) !important; color: var(--pink) !important; }
+  .quiz-option:disabled { cursor: not-allowed; }
+
+  .quiz-progress { font-size: 0.8rem; color: #888; margin-bottom: 12px; text-align: right; }
+  .quiz-nav { display: flex; gap: 10px; justify-content: flex-end; }
+  .quiz-nav-btn {
+    padding: 10px 24px;
+    border: 1px solid var(--aqua);
+    background: transparent;
+    color: var(--aqua);
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.3s;
+  }
+  .quiz-nav-btn:hover { background: var(--aqua); color: #000; }
+
+  .quiz-feedback {
+    margin-top: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    animation: fadeIn 0.3s ease;
+  }
+  .quiz-feedback.correct-fb { background: rgba(0,255,136,0.1); color: var(--green); border: 1px solid rgba(0,255,136,0.3); }
+  .quiz-feedback.wrong-fb { background: rgba(255,0,127,0.1); color: var(--pink); border: 1px solid rgba(255,0,127,0.3); }
+
+  .quiz-result { text-align: center; padding: 20px 0; }
+  .quiz-score {
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--gold), var(--green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .quiz-result-msg { font-size: 1.1rem; margin: 12px 0 20px; color: var(--text-main); }
+  .quiz-result-sub { font-size: 0.85rem; color: #888; margin-bottom: 20px; }
+
+  /* Stats bar in result */
+  .quiz-stat-row { display: flex; gap: 12px; justify-content: center; margin: 15px 0; flex-wrap: wrap; }
+  .quiz-stat-box {
+    flex: 1; min-width: 100px;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid;
+  }
+  .quiz-stat-box.correct-box { border-color: rgba(0,255,136,0.3); background: rgba(0,255,136,0.07); }
+  .quiz-stat-box.wrong-box { border-color: rgba(255,0,127,0.3); background: rgba(255,0,127,0.07); }
+  .quiz-stat-num { font-size: 1.8rem; font-weight: 700; }
+  .correct-box .quiz-stat-num { color: var(--green); }
+  .wrong-box .quiz-stat-num { color: var(--pink); }
+  .quiz-stat-label { font-size: 0.75rem; color: #888; }
+
+  /* Review section */
+  .review-section { margin-top: 20px; text-align: left; }
+  .review-title { font-size: 0.85rem; font-weight: 700; color: var(--gold); margin-bottom: 10px; letter-spacing: 0.5px; }
+  .review-item {
+    background: rgba(0,0,0,0.4);
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+    border-left: 3px solid;
+  }
+  .review-item.ok { border-color: var(--green); }
+  .review-item.bad { border-color: var(--pink); }
+  .review-item .ri-q { color: #aaa; margin-bottom: 4px; }
+  .review-item .ri-correct { color: var(--green); }
+  .review-item .ri-wrong { color: var(--pink); }
+
+  /* Profile */
+  .profile-box {
+    max-width: 700px;
+    margin: 20px auto;
+    background: linear-gradient(135deg, #0a0f1e, #110a22);
+    border: 1px solid var(--aqua);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 0 30px rgba(0,240,255,0.1);
+  }
+  .profile-avatar-wrap { text-align: center; margin-bottom: 20px; }
+  .profile-avatar { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 3px solid var(--aqua); box-shadow: 0 0 20px rgba(0,240,255,0.4); cursor: pointer; }
+  .profile-avatar-placeholder { width: 90px; height: 90px; border-radius: 50%; background: linear-gradient(135deg, var(--purple), var(--aqua)); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto; border: 3px solid var(--aqua); box-shadow: 0 0 20px rgba(0,240,255,0.4); cursor: pointer; }
+  .profile-name-display { font-size: 1.4rem; font-weight: 700; color: var(--aqua); margin-top: 8px; }
+  .profile-email-display { font-size: 0.85rem; color: #888; }
+  .profile-section-title { font-size: 0.85rem; font-weight: 700; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; border-bottom: 1px solid rgba(255,207,84,0.2); padding-bottom: 6px; margin: 20px 0 12px; }
+  .history-item { background: rgba(0,0,0,0.4); border-left: 3px solid var(--purple); padding: 10px 14px; border-radius: 8px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; }
+  .history-score { font-weight: 700; }
+  .history-score.pass { color: var(--green); }
+  .history-score.fail { color: var(--pink); }
+  .profile-actions { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+  .profile-action-btn { flex: 1; min-width: 140px; padding: 10px; border: 1px solid var(--purple); background: transparent; color: var(--purple); border-radius: 10px; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.82rem; transition: all 0.3s; text-align: center; }
+  .profile-action-btn:hover { background: var(--purple); color: #fff; }
+  .profile-action-btn.danger { border-color: var(--pink); color: var(--pink); }
+  .profile-action-btn.danger:hover { background: var(--pink); color: #fff; }
+
+  .lock-overlay { text-align: center; padding: 60px 20px; background: rgba(0,0,0,0.6); border-radius: 16px; border: 1px dashed var(--purple); }
+  .lock-overlay h2 { font-size: 3rem; margin-bottom: 12px; }
+  .lock-overlay p { color: #aaa; font-size: 0.95rem; line-height: 1.7; }
+  .lock-overlay strong { color: var(--gold); }
+
+  .placeholder { text-align: center; padding: 50px 20px; background: rgba(0,0,0,0.5); border-radius: 16px; border: 1px dashed var(--purple); color: #aaa; }
+
+  .progress-bar-wrap { background: rgba(255,255,255,0.08); border-radius: 20px; height: 6px; margin-bottom: 20px; overflow: hidden; }
+  .progress-bar { height: 100%; background: linear-gradient(90deg, var(--aqua), var(--purple)); border-radius: 20px; transition: width 0.5s ease; }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 1.2rem; }
+    .header-actions { position: static; transform: none; justify-content: center; margin-top: 8px; }
+    .modal-box { padding: 22px 16px; }
+    .quiz-modal-box { padding: 18px 14px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="underwater">
+    <span class="fish fish1">🐟</span>
+    <span class="fish fish2">🐠</span>
+    <span class="bubble b1">🫧</span>
+    <span class="bubble b2">🫧</span>
+    <span class="bubble b3">🫧</span>
+    <span class="weed w1">🌿☘️</span>
+    <span class="weed w2">🌿</span>
+  </div>
+  <h1>English Sentence Patterns</h1>
+  <div class="author">Developed by Mohammad Al Amin Hosen Tamim</div>
+  <div class="header-actions" id="headerActions">
+    <button class="hdr-btn" onclick="openModal('loginModal')">Login</button>
+    <button class="hdr-btn gold" onclick="openModal('signupModal')">Sign Up</button>
+  </div>
+</header>
+
+<!-- NAVIGATION -->
+<div class="nav-container" id="mainNav"></div>
+
+<!-- LEVEL TABS -->
+<div class="level-tabs" id="levelTabs"></div>
+
+<!-- MAIN CONTENT -->
+<div class="container" id="mainContainer"></div>
+
+<!-- ========== MODALS ========== -->
+
+<!-- LOGIN MODAL -->
+<div class="modal-overlay" id="loginModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('loginModal')">✕</button>
+    <div class="modal-title">🔐 Login</div>
+    <div class="form-group">
+      <label>Gmail</label>
+      <input type="email" id="loginEmail" placeholder="your@gmail.com">
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" id="loginPassword" placeholder="Enter password">
+    </div>
+    <div class="form-error" id="loginError">Invalid email or password.</div>
+    <button class="form-submit" onclick="doLogin()">Login</button>
+    <div class="form-link">Don't have an account? <a onclick="switchToSignup()">Sign Up</a></div>
+    <div class="form-link"><a onclick="switchToForgot()">Forgot Password?</a></div>
+  </div>
+</div>
+
+<!-- SIGNUP MODAL -->
+<div class="modal-overlay" id="signupModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('signupModal')">✕</button>
+    <div class="modal-title">🚀 Create Account</div>
+    <div class="form-group">
+      <label>Full Name</label>
+      <input type="text" id="signupName" placeholder="Your Name">
+    </div>
+    <div class="form-group">
+      <label>Gmail</label>
+      <input type="email" id="signupEmail" placeholder="your@gmail.com">
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" id="signupPassword" placeholder="Min. 6 characters">
+    </div>
+    <div class="form-error" id="signupError"></div>
+    <button class="form-submit" onclick="doSignup()">Create Account</button>
+    <div class="form-link">Already have an account? <a onclick="switchToLogin()">Login</a></div>
+  </div>
+</div>
+
+<!-- FORGOT PASSWORD MODAL -->
+<div class="modal-overlay" id="forgotModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('forgotModal')">✕</button>
+    <div class="modal-title">🔑 Reset Password</div>
+    <div class="form-group">
+      <label>Gmail</label>
+      <input type="email" id="forgotEmail" placeholder="your@gmail.com">
+    </div>
+    <div class="form-group">
+      <label>New Password</label>
+      <input type="password" id="forgotNewPass" placeholder="New password">
+    </div>
+    <div class="form-error" id="forgotError"></div>
+    <div class="form-success" id="forgotSuccess">Password updated successfully!</div>
+    <button class="form-submit" onclick="doForgotPassword()">Reset Password</button>
+    <div class="form-link"><a onclick="closeModal('forgotModal'); openModal('loginModal')">Back to Login</a></div>
+  </div>
+</div>
+
+<!-- CHANGE PASSWORD MODAL -->
+<div class="modal-overlay" id="changePwModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('changePwModal')">✕</button>
+    <div class="modal-title">🔄 Change Password</div>
+    <div class="form-group">
+      <label>Current Password</label>
+      <input type="password" id="cpCurrent" placeholder="Current password">
+    </div>
+    <div class="form-group">
+      <label>New Password</label>
+      <input type="password" id="cpNew" placeholder="New password">
+    </div>
+    <div class="form-error" id="cpError"></div>
+    <div class="form-success" id="cpSuccess">Password changed!</div>
+    <button class="form-submit" onclick="doChangePassword()">Change Password</button>
+  </div>
+</div>
+
+<!-- EDIT PROFILE MODAL -->
+<div class="modal-overlay" id="editProfileModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('editProfileModal')">✕</button>
+    <div class="modal-title">✏️ Edit Profile</div>
+    <div class="form-group">
+      <label>Full Name</label>
+      <input type="text" id="epName" placeholder="Your Name">
+    </div>
+    <div class="form-group">
+      <label>Address</label>
+      <input type="text" id="epAddress" placeholder="Your Address">
+    </div>
+    <div class="form-group">
+      <label>Profile Picture URL (optional)</label>
+      <input type="text" id="epPic" placeholder="https://...">
+    </div>
+    <div class="form-error" id="epError"></div>
+    <button class="form-submit" onclick="doEditProfile()">Save Changes</button>
+  </div>
+</div>
+
+<!-- QUIZ MODAL -->
+<div class="modal-overlay" id="quizModal">
+  <div class="modal-box quiz-modal-box">
+    <button class="modal-close" onclick="closeModal('quizModal')">✕</button>
+    <div class="modal-title" id="quizTitle">📝 Quiz</div>
+    <div id="quizBody"></div>
+  </div>
+</div>
+
+<!-- NEED LOGIN MODAL -->
+<div class="modal-overlay" id="needLoginModal">
+  <div class="modal-box" style="text-align:center;">
+    <button class="modal-close" onclick="closeModal('needLoginModal')">✕</button>
+    <div style="font-size:3rem;margin-bottom:12px;">🔒</div>
+    <div class="modal-title">Login Required</div>
+    <p style="color:#aaa;font-size:0.9rem;margin-bottom:20px;">Please login or create an account to access locked levels.</p>
+    <div style="display:flex;gap:10px;">
+      <button class="form-submit" onclick="closeModal('needLoginModal');openModal('loginModal')" style="margin-top:0;">Login</button>
+      <button class="form-submit" onclick="closeModal('needLoginModal');openModal('signupModal')" style="margin-top:0;background:linear-gradient(45deg,#ff007f,#8a2be2);">Sign Up</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ===================================================
+//  DATA
+// ===================================================
+const ALL_DATA = {
+  sec1: {
+    name: "1st 50",
+    levels: [
+      [
+        { n:1, pat:"I'm keen on + [Verb+ing]", ben:"আমি ... করার ব্যাপারে খুব আগ্রহী।", pro:"আইম কীন অন", pool:["I'm keen on learning new languages.","She is keen on playing tennis.","They're keen on traveling the world.","I'm keen on exploring new technologies.","He's keen on reading historical books.","We are keen on starting this project.","I'm keen on cooking Italian food.","She's keen on mastering piano."] },
+        { n:2, pat:"I'm fond of + [Noun/ing]", ben:"আমি ... খুব পছন্দ করি।", pro:"আইম ফন্ড অফ", pool:["I'm fond of classical music.","She's fond of chocolate cake.","I'm fond of walking in the rain.","They are fond of vintage cars.","He's fond of telling funny stories.","We are fond of collecting stamps.","I'm fond of sweet desserts.","She is fond of her pet cat."] },
+        { n:3, pat:"I'm about to + [Verb]", ben:"আমি এখনই ... করতে যাচ্ছি।", pro:"আইম অ্যাবাউট টু", pool:["I'm about to leave for the airport.","She's about to finish her presentation.","We are about to start the movie.","He is about to call his manager.","I'm about to go to sleep.","They are about to announce the winner.","I'm about to send the email.","She's about to cry."] },
+        { n:4, pat:"It's time to + [Verb]", ben:"এখন ... করার সময়।", pro:"ইটস টাইম টু", pool:["It's time to wake up.","It's time to say goodbye.","It's time to take a break.","It's time to start working.","It's time to change the plan.","It's time to go home.","It's time to make a decision.","It's time to move on."] },
+        { n:5, pat:"I used to + [Verb]", ben:"আমি আগে ... করতাম।", pro:"আই ইউজড টু", pool:["I used to play cricket every afternoon.","She used to live in London.","I used to smoke, but I quit.","They used to be good friends.","He used to work here.","We used to visit them every week.","I used to hate vegetables.","She used to wear glasses."] },
+        { n:6, pat:"I am used to + [Verb+ing]", ben:"আমি ... করতে অভ্যস্ত।", pro:"আই অ্যাম ইউজড টু", pool:["I am used to waking up early.","She is used to working under pressure.","I am used to living alone.","They are used to the cold weather.","He is used to speaking in public.","We are used to eating spicy food.","I am used to driving in heavy traffic.","She's used to studying at night."] },
+        { n:7, pat:"I'm looking forward to + [Verb+ing]", ben:"আমি ... করার জন্য অধীর আগ্রহে অপেক্ষা করছি।", pro:"আইম লুকিং ফরোয়ার্ড টু", pool:["I'm looking forward to meeting you.","She's looking forward to visiting Paris.","We are looking forward to hearing from you.","I'm looking forward to starting my new job.","They are looking forward to the holidays.","He's looking forward to seeing his family.","I'm looking forward to the concert.","She's looking forward to getting married."] },
+        { n:8, pat:"I feel like + [Verb+ing]", ben:"আমার ... করতে ইচ্ছা করছে।", pro:"আই ফিল লাইক", pool:["I feel like having a cup of coffee.","She feels like going for a walk.","I don't feel like working today.","They feel like watching a movie.","He feels like crying.","We feel like celebrating tonight.","I feel like sleeping all day.","She feels like eating ice cream."] },
+        { n:9, pat:"I'm thinking of + [Verb+ing]", ben:"আমি ... করার কথা ভাবছি।", pro:"আইম থিংকিং অফ", pool:["I'm thinking of buying a new car.","She's thinking of moving to another city.","I'm thinking of changing my career.","They are thinking of starting a business.","He's thinking of going back to school.","We are thinking of adopting a pet.","I'm thinking of painting my room.","She's thinking of taking a vacation."] },
+        { n:10, pat:"I can't help + [Verb+ing]", ben:"আমি ... না করে পারছি না।", pro:"আই কান্ট হেল্প", pool:["I can't help laughing at his jokes.","She can't help feeling nervous.","I can't help eating chocolates.","They can't help wondering about the future.","He can't help staring at her.","We can't help agreeing with him.","I can't help worrying about my exams.","She can't help crying during sad movies."] }
+      ],
+      [
+        { n:11, pat:"I'm supposed to + [Verb]", ben:"আমার ... করার কথা।", pro:"আইম সাপোজড টু", pool:["I'm supposed to submit the report today.","You're supposed to be here at 9 AM.","She is supposed to call me back.","We are supposed to clean the house.","He is supposed to lead the meeting.","I'm supposed to meet him for lunch.","They are supposed to deliver the package.","I'm supposed to take my medicine."] },
+        { n:12, pat:"I'd rather + [Verb] + than + [Verb]", ben:"আমি বরং ... করব।", pro:"আইড রাদার", pool:["I'd rather walk than take the bus.","She'd rather read a book than watch TV.","I'd rather stay home than go out.","They'd rather fail than cheat.","He'd rather sleep than play games.","We'd rather starve than beg.","I'd rather listen to music than talk.","She'd rather drink tea than coffee."] },
+        { n:13, pat:"It's no use + [Verb+ing]", ben:"... করে কোনো লাভ নেই।", pro:"ইটস নো ইউজ", pool:["It's no use crying over spilled milk.","It's no use complaining now.","It's no use trying to change his mind.","It's no use waiting for them.","It's no use arguing with a fool.","It's no use running, the train has left.","It's no use hiding the truth.","It's no use apologizing after the damage is done."] },
+        { n:14, pat:"There's no point in + [Verb+ing]", ben:"... করার কোনো মানে হয় না।", pro:"দেয়ারস নো পয়েন্ট ইন", pool:["There's no point in worrying about it.","There's no point in going there now.","There's no point in buying a broken car.","There's no point in talking to him.","There's no point in regretting the past.","There's no point in repeating the same mistake.","There's no point in staying awake late.","There's no point in fixing this old machine."] },
+        { n:15, pat:"How about + [Verb+ing]?", ben:"... করলে কেমন হয়?", pro:"হাউ অ্যাবাউট", pool:["How about ordering pizza tonight?","How about visiting the museum tomorrow?","How about taking a short break?","How about trying a different approach?","How about watching a comedy movie?","How about going for a swim?","How about inviting them over?","How about learning a new language?"] },
+        { n:16, pat:"What if + [Subject + Verb]?", ben:"কি হবে যদি ...?", pro:"হোয়াট ইফ", pool:["What if it rains during the match?","What if he doesn't agree with us?","What if we miss the flight?","What if they find out the truth?","What if the plan fails?","What if I get the job?","What if she forgets to call?","What if the car breaks down on the way?"] },
+        { n:17, pat:"I'm bound to + [Verb]", ben:"আমি ... করতে বাধ্য বা নিশ্চিতভাবে করব।", pro:"আইম বাউন্ড টু", pool:["I'm bound to make mistakes.","She is bound to notice the change.","They are bound to win the game.","He is bound to return eventually.","We are bound to face difficulties.","I'm bound to succeed if I work hard.","The truth is bound to come out.","You are bound to feel tired."] },
+        { n:18, pat:"I'm getting tired of + [Verb+ing]", ben:"আমি ... করতে করতে ক্লান্ত হয়ে যাচ্ছি।", pro:"আইম গেটিং টায়ার্ড অফ", pool:["I'm getting tired of eating the same food.","She's getting tired of his excuses.","I'm getting tired of waiting for the bus.","They are getting tired of working late.","He is getting tired of answering the phone.","We are getting tired of this hot weather.","I'm getting tired of arguing with you.","She is getting tired of trying to please everyone."] },
+        { n:19, pat:"It takes [Time] to + [Verb]", ben:"... করতে [সময়] লাগে।", pro:"ইট টেকস", pool:["It takes two hours to reach there.","It takes a lot of effort to learn English.","It takes courage to speak the truth.","It takes time to heal a broken heart.","It takes five minutes to make a cup of tea.","It takes months to build a house.","It takes patience to raise children.","It takes practice to become perfect."] },
+        { n:20, pat:"I have trouble + [Verb+ing]", ben:"আমার ... করতে সমস্যা হচ্ছে।", pro:"আই হ্যাভ ট্রাবল", pool:["I have trouble sleeping at night.","She has trouble understanding math.","I have trouble remembering names.","They have trouble communicating in French.","He has trouble keeping secrets.","We have trouble finding good employees.","I have trouble reading small texts.","She has trouble dealing with stress."] }
+      ],
+      [
+        { n:21, pat:"I've decided to + [Verb]", ben:"আমি ... করার সিদ্ধান্ত নিয়েছি।", pro:"আইভ ডিসাইডেড টু", pool:["I've decided to quit my job.","She's decided to move to Canada.","I've decided to learn how to code.","They've decided to get married.","He's decided to buy a new house.","We've decided to cancel the trip.","I've decided to start a diet.","She's decided to forgive him."] },
+        { n:22, pat:"I'm here to + [Verb]", ben:"আমি এখানে ... করতে এসেছি।", pro:"আইম হিয়ার টু", pool:["I'm here to help you.","I'm here to learn from the best.","She is here to collect her prize.","We are here to support our team.","He is here to repair the computer.","I'm here to apologize for my mistake.","They are here to attend the conference.","I'm here to pick up my luggage."] },
+        { n:23, pat:"I'm calling to + [Verb]", ben:"আমি ... করার জন্য ফোন করছি।", pro:"আইম কলিং টু", pool:["I'm calling to book a table.","I'm calling to confirm our meeting.","She's calling to ask for a favor.","I'm calling to complain about the service.","He's calling to wish you a happy birthday.","We are calling to invite you to the party.","I'm calling to cancel my subscription.","I'm calling to check on your health."] },
+        { n:24, pat:"I'm working on + [Noun/ing]", ben:"আমি ... নিয়ে কাজ করছি।", pro:"আইম ওয়ার্কিং অন", pool:["I'm working on a new project.","She's working on improving her English.","I'm working on my communication skills.","They are working on a solution to the problem.","He's working on his thesis.","We are working on building a website.","I'm working on fixing my car.","She's working on a painting."] },
+        { n:25, pat:"I'm afraid that + [Sentence]", ben:"আমার ভয় হচ্ছে যে ...", pro:"আইম অ্যাফ্রেইড দ্যাট", pool:["I'm afraid that I can't help you.","I'm afraid that we have lost the game.","She's afraid that he might reject her.","I'm afraid that the flight is delayed.","He is afraid that he will fail the test.","I'm afraid that I have some bad news.","We are afraid that the costs will increase.","I'm afraid that you are mistaken."] },
+        { n:26, pat:"I'm sure that + [Sentence]", ben:"আমি নিশ্চিত যে ...", pro:"আইম শিওর দ্যাট", pool:["I'm sure that you will succeed.","I'm sure that he is telling the truth.","She's sure that she locked the door.","I'm sure that we will win the match.","They are sure that the plan will work.","I'm sure that he will be a great leader.","We are sure that things will get better.","I'm sure that I saw him here."] },
+        { n:27, pat:"I'm not sure if + [Sentence]", ben:"আমি নিশ্চিত নই যে ...", pro:"আইম নট শিওর ইফ", pool:["I'm not sure if he will come.","I'm not sure if I have enough money.","She's not sure if she should accept the offer.","I'm not sure if this is the right address.","They are not sure if the shop is open.","I'm not sure if I can finish this on time.","We are not sure if he got the message.","I'm not sure if I like this color."] },
+        { n:28, pat:"I've heard that + [Sentence]", ben:"আমি শুনেছি যে ...", pro:"আইভ হার্ড দ্যাট", pool:["I've heard that you are getting married.","I've heard that the company is closing.","She's heard that he is very strict.","I've heard that this restaurant is amazing.","They've heard that a storm is coming.","I've heard that he resigned from his job.","We've heard that the movie is boring.","I've heard that you won the lottery!"] },
+        { n:29, pat:"It occurs to me that + [Sentence]", ben:"আমার মনে হচ্ছে যে ...", pro:"ইট অকার্স টু মি দ্যাট", pool:["It occurs to me that we forgot his birthday.","It occurs to me that she might be lying.","It occurs to me that I left my keys inside.","It occurs to me that we are lost.","It occurs to me that he doesn't know the truth.","It occurs to me that we need a better plan.","It occurs to me that I should apologize.","It occurs to me that time is running out."] },
+        { n:30, pat:"It's lucky that + [Sentence]", ben:"এটা ভাগ্যের ব্যাপার যে ...", pro:"ইটস লাকি দ্যাট", pool:["It's lucky that you were there to help.","It's lucky that it didn't rain yesterday.","It's lucky that I found my wallet.","It's lucky that we caught the train on time.","It's lucky that no one was hurt.","It's lucky that she knows the way.","It's lucky that I had an umbrella.","It's lucky that we booked the tickets early."] }
+      ],
+      [
+        { n:31, pat:"I'll let you know when + [Sentence]", ben:"... হলে আমি তোমাকে জানাব।", pro:"আইল লেট ইউ নো হোয়েন", pool:["I'll let you know when I reach home.","I'll let you know when the results are out.","I'll let you know when I am free.","I'll let you know when the meeting starts.","I'll let you know when he arrives.","I'll let you know when dinner is ready.","I'll let you know when I make a decision.","I'll let you know when the package is delivered."] },
+        { n:32, pat:"I'm dying to + [Verb]", ben:"আমি ... করার জন্য মরে যাচ্ছি।", pro:"আইম ডাইং টু", pool:["I'm dying to see you.","I'm dying to eat some pizza.","She's dying to know the secret.","I'm dying to watch the new episode.","He is dying to play the new game.","We are dying to go on a vacation.","I'm dying to tell you the good news.","I'm dying to try this recipe."] },
+        { n:33, pat:"I'm in the mood for + [Noun/ing]", ben:"আমার এখন ... করার মেজাজ আছে।", pro:"আইম ইন দ্য মুড ফর", pool:["I'm in the mood for a cup of tea.","I'm in the mood for watching a movie.","She's in the mood for dancing.","I'm in the mood for some spicy food.","He's not in the mood for joking.","We are in the mood for an adventure.","I'm in the mood for listening to music.","I'm in the mood for doing nothing."] },
+        { n:34, pat:"I can't wait to + [Verb]", ben:"আমি ... করার জন্য আর অপেক্ষা করতে পারছি না।", pro:"আই কান্ট ওয়েট টু", pool:["I can't wait to meet you.","I can't wait to unbox my new phone.","She can't wait to start her new job.","I can't wait to travel again.","He can't wait to see his parents.","We can't wait to hear your presentation.","I can't wait to taste this cake.","I can't wait to finish this exam."] },
+        { n:35, pat:"I'm planning to + [Verb]", ben:"আমি ... করার পরিকল্পনা করছি।", pro:"আইম প্ল্যানিং টু", pool:["I'm planning to go abroad next year.","I'm planning to start a YouTube channel.","She's planning to buy a new dress.","We are planning to organize a party.","He is planning to surprise her.","I'm planning to learn video editing.","They are planning to invest in stocks.","I'm planning to wake up early tomorrow."] },
+        { n:36, pat:"I'm trying to + [Verb]", ben:"আমি ... করার চেষ্টা করছি।", pro:"আইম ট্রায়িং টু", pool:["I'm trying to solve this puzzle.","I'm trying to lose some weight.","She's trying to focus on her studies.","I'm trying to understand your point of view.","He is trying to fix the television.","We are trying to contact him.","I'm trying to save money.","I'm trying to be a better person."] },
+        { n:37, pat:"I'm sorry for + [Verb+ing]", ben:"আমি ... করার জন্য দুঃখিত।", pro:"আইম সরি ফর", pool:["I'm sorry for being late.","I'm sorry for breaking your trust.","She is sorry for shouting at you.","I'm sorry for making a mistake.","He is sorry for losing the keys.","I'm sorry for hurting your feelings.","We are sorry for disturbing you.","I'm sorry for causing so much trouble."] },
+        { n:38, pat:"I'm curious about + [Noun/ing]", ben:"আমি ... নিয়ে কৌতূহলী।", pro:"আইম কিউরিয়াস অ্যাবাউট", pool:["I'm curious about the universe.","I'm curious about learning new cultures.","She's curious about his past.","I'm curious about how it works.","He is curious about the latest technology.","We are curious about the results.","I'm curious about your opinion.","I'm curious about exploring this city."] },
+        { n:39, pat:"I'm hesitant to + [Verb]", ben:"আমি ... করতে দ্বিধা বোধ করছি।", pro:"আইম হেজিটেট টু", pool:["I'm hesitant to ask for a loan.","I'm hesitant to share my password.","She's hesitant to speak up in the meeting.","I'm hesitant to travel alone.","He is hesitant to invest his money.","We are hesitant to trust him.","I'm hesitant to make a quick decision.","I'm hesitant to give him the responsibility."] },
+        { n:40, pat:"I'm grateful for + [Noun/ing]", ben:"আমি ... এর জন্য কৃতজ্ঞ।", pro:"আইম গ্রেটফুল ফর", pool:["I'm grateful for your support.","I'm grateful for having such good friends.","She is grateful for the opportunity.","I'm grateful for my health.","He is grateful for learning this lesson.","We are grateful for everything.","I'm grateful for your kind words.","I'm grateful for being alive today."] }
+      ],
+      [
+        { n:41, pat:"I'm ashamed of + [Noun/ing]", ben:"আমি ... এর জন্য লজ্জিত।", pro:"আইম অ্যাশেইমড অফ", pool:["I'm ashamed of my behavior.","I'm ashamed of failing the test.","She's ashamed of telling a lie.","I'm ashamed of myself.","He is ashamed of his old clothes.","We are ashamed of losing so badly.","I'm ashamed of what I did.","I'm ashamed of making that silly mistake."] },
+        { n:42, pat:"I'm proud of + [Noun/ing]", ben:"আমি ... নিয়ে গর্বিত।", pro:"আইম প্রাউড অফ", pool:["I'm proud of my country.","I'm proud of being your friend.","She's proud of her achievements.","I'm proud of our team's effort.","He is proud of his son.","We are proud of winning the trophy.","I'm proud of doing the right thing.","I'm proud of overcoming my fears."] },
+        { n:43, pat:"I'm worried about + [Noun/ing]", ben:"আমি ... নিয়ে চিন্তিত।", pro:"আইম ওরিড অ্যাবাউট", pool:["I'm worried about the future.","I'm worried about passing the exam.","She's worried about her mother's health.","I'm worried about losing my job.","He is worried about the bad weather.","We are worried about making it on time.","I'm worried about the growing pollution.","I'm worried about speaking in front of a crowd."] },
+        { n:44, pat:"I'm annoyed with + [Person]", ben:"আমি ... এর ওপর বিরক্ত।", pro:"আইম অ্যানয়েড উইথ", pool:["I'm annoyed with my brother.","I'm annoyed with him for being late.","She's annoyed with her boss.","I'm annoyed with you right now.","He is annoyed with the customer.","We are annoyed with the noisy neighbors.","I'm annoyed with myself for forgetting.","I'm annoyed with the mechanic."] },
+        { n:45, pat:"I'm amazed at + [Noun/ing]", ben:"আমি ... দেখে অবাক।", pro:"আইম অ্যামেজড অ্যাট", pool:["I'm amazed at his talent.","I'm amazed at seeing this beautiful view.","She's amazed at how fast he learns.","I'm amazed at your intelligence.","He is amazed at the technology.","We are amazed at the speed of the car.","I'm amazed at the building's architecture.","I'm amazed at her confidence."] },
+        { n:46, pat:"I'm disappointed with + [Noun/ing]", ben:"আমি ... নিয়ে হতাশ।", pro:"আইম ডিজঅ্যাপয়েন্টেড উইথ", pool:["I'm disappointed with the result.","I'm disappointed with his poor performance.","She's disappointed with the bad service.","I'm disappointed with this movie.","He is disappointed with the delay.","We are disappointed with the quality of food.","I'm disappointed with your attitude.","I'm disappointed with failing again."] },
+        { n:47, pat:"I'm satisfied with + [Noun/ing]", ben:"আমি ... নিয়ে সন্তুষ্ট।", pro:"আইম স্যাটিসফাইড উইথ", pool:["I'm satisfied with my current job.","I'm satisfied with finishing the project.","She's satisfied with the test results.","I'm satisfied with the product quality.","He is satisfied with her explanation.","We are satisfied with your hard work.","I'm satisfied with the salary.","I'm satisfied with the progress."] },
+        { n:48, pat:"I'm excited about + [Noun/ing]", ben:"আমি ... নিয়ে উত্তেজিত।", pro:"আইম এক্সাইটেড অ্যাবাউট", pool:["I'm excited about the upcoming tour.","I'm excited about joining the new college.","She's excited about buying a new phone.","I'm excited about the concert.","He is excited about meeting his hero.","We are excited about the new project.","I'm excited about moving to a new city.","I'm excited about the football match."] },
+        { n:49, pat:"I'm bored with + [Noun/ing]", ben:"আমি ... নিয়ে বিরক্ত।", pro:"আইম বোর্ড উইথ", pool:["I'm bored with watching the same show.","I'm bored with my daily routine.","She's bored with listening to his stories.","I'm bored with this game.","He is bored with eating fast food.","We are bored with sitting at home.","I'm bored with waiting for so long.","I'm bored with this useless conversation."] },
+        { n:50, pat:"I'm shocked by + [Noun/ing]", ben:"আমি ... শুনে মর্মাহত।", pro:"আইম শকড বাই", pool:["I'm shocked by the sudden news.","I'm shocked by hearing about the accident.","She's shocked by his rude behavior.","I'm shocked by the high price.","He is shocked by losing the match.","We are shocked by the decision.","I'm shocked by seeing him here.","I'm shocked by the lack of humanity."] }
+      ]
+    ]
+  },
+  sec2: { name:"2nd 50", levels: [
+    [
+      { n:51, pat:"I'm convinced that + [Sentence]", ben:"আমি বিশ্বাস করি যে ...", pro:"আইম কনভিন্সড দ্যাট", pool:["I'm convinced that he is innocent.","I'm convinced that this plan will work.","She's convinced that they are lying.","I'm convinced that hard work pays off.","He is convinced that she loves him.","We are convinced that the decision is right.","I'm convinced that things will improve.","I'm convinced that he made a mistake."] },
+      { n:52, pat:"I'm aware of + [Noun]", ben:"আমি ... সম্পর্কে সচেতন।", pro:"আইম অ্যাওয়ার অফ", pool:["I'm aware of the risks involved.","She is aware of the new rules.","I'm aware of the problem.","They are aware of the situation.","He is aware of his responsibilities.","We are aware of the deadline.","I'm aware of your concerns.","I'm aware of the changes in policy."] },
+      { n:53, pat:"I'm responsible for + [Noun/ing]", ben:"আমি ... এর জন্য দায়ী।", pro:"আইম রেসপনসিবল ফর", pool:["I'm responsible for this mistake.","She is responsible for managing the team.","I'm responsible for cooking dinner.","He is responsible for the project's failure.","We are responsible for our actions.","I'm responsible for paying the bills.","They are responsible for the damage.","I'm responsible for training new staff."] },
+      { n:54, pat:"I'm gifted at + [Noun/ing]", ben:"আমি ... এ দক্ষ।", pro:"আইম গিফটেড অ্যাট", pool:["I'm gifted at drawing portraits.","She is gifted at playing the violin.","I'm gifted at solving complex problems.","He is gifted at learning new languages.","We are gifted at working as a team.","I'm gifted at storytelling.","She is gifted at cooking exotic dishes.","I'm gifted at making people laugh."] },
+      { n:55, pat:"I'm optimistic about + [Noun/ing]", ben:"আমি ... নিয়ে আশাবাদী।", pro:"আইম অপটিমিস্টিক অ্যাবাউট", pool:["I'm optimistic about the future.","She is optimistic about getting the job.","I'm optimistic about our team's performance.","He is optimistic about the economy.","We are optimistic about the project.","I'm optimistic about finding a solution.","I'm optimistic about my health improving.","She is optimistic about their relationship."] },
+      { n:56, pat:"I'm pessimistic about + [Noun/ing]", ben:"আমি ... নিয়ে হতাশাবাদী।", pro:"আইম পেসিমিস্টিক অ্যাবাউট", pool:["I'm pessimistic about the outcome.","She is pessimistic about finding a job.","I'm pessimistic about the weather tomorrow.","He is pessimistic about the plan succeeding.","We are pessimistic about the negotiations.","I'm pessimistic about their chances.","I'm pessimistic about the economic situation.","She is pessimistic about making it on time."] },
+      { n:57, pat:"I'm suspicious of + [Noun/ing]", ben:"আমি ... কে সন্দেহ করি।", pro:"আইম সাসপিশাস অফ", pool:["I'm suspicious of his motives.","She is suspicious of the new neighbor.","I'm suspicious of his sudden kindness.","He is suspicious of the deal.","We are suspicious of their behavior.","I'm suspicious of her story.","I'm suspicious of the stranger at the door.","She is suspicious of his intentions."] },
+      { n:58, pat:"I'm envious of + [Noun/ing]", ben:"আমি ... এর প্রতি ঈর্ষান্বিত।", pro:"আইম এনভিয়াস অফ", pool:["I'm envious of her success.","I'm envious of his talent.","She is envious of their happy relationship.","I'm envious of his ability to stay calm.","He is envious of his friend's new car.","We are envious of their vacation.","I'm envious of her confidence.","I'm envious of his peaceful lifestyle."] },
+      { n:59, pat:"I'm fascinated by + [Noun/ing]", ben:"আমি ... দেখে মুগ্ধ।", pro:"আইম ফ্যাসিনেটেড বাই", pool:["I'm fascinated by the night sky.","I'm fascinated by ancient history.","She is fascinated by how the brain works.","I'm fascinated by deep sea creatures.","He is fascinated by magic tricks.","We are fascinated by different cultures.","I'm fascinated by learning new languages.","I'm fascinated by artificial intelligence."] },
+      { n:60, pat:"I'm impressed by + [Noun/ing]", ben:"আমি ... এর দ্বারা প্রভাবিত।", pro:"আইম ইমপ্রেসড বাই", pool:["I'm impressed by your dedication.","I'm impressed by her performance.","She is impressed by his knowledge.","I'm impressed by the quality of the work.","He is impressed by her singing.","We are impressed by the team's effort.","I'm impressed by how quickly you learned.","I'm impressed by the city's architecture."] }
+    ],
+    [
+      { n:61, pat:"I'm confused about + [Noun/ing]", ben:"আমি ... নিয়ে বিভ্রান্ত।", pro:"আইম কনফিউজড অ্যাবাউট", pool:["I'm confused about the instructions.","I'm confused about his decision.","She is confused about the directions.","I'm confused about what to do next.","He is confused about the situation.","We are confused about the new policy.","I'm confused about her behavior.","I'm confused about choosing the right path."] },
+      { n:62, pat:"I'm certain that + [Sentence]", ben:"আমি নিশ্চিত যে ...", pro:"আইম সার্টেন দ্যাট", pool:["I'm certain that he will come.","I'm certain that we made the right choice.","She is certain that they will win.","I'm certain that this is the right address.","He is certain that she is telling the truth.","We are certain that the plan will succeed.","I'm certain that things will get better.","I'm certain that he is the best candidate."] },
+      { n:63, pat:"It's obvious that + [Sentence]", ben:"এটা স্পষ্ট যে ...", pro:"ইটস অবভিয়াস দ্যাট", pool:["It's obvious that he is lying.","It's obvious that she is upset.","It's obvious that they are in love.","It's obvious that the plan failed.","It's obvious that he doesn't care.","It's obvious that you are tired.","It's obvious that the situation is serious.","It's obvious that we need to change our approach."] },
+      { n:64, pat:"It's unlikely that + [Sentence]", ben:"এটা হওয়ার সম্ভাবনা কম যে ...", pro:"ইটস আনলাইকলি দ্যাট", pool:["It's unlikely that he will agree.","It's unlikely that they will arrive on time.","It's unlikely that she will change her mind.","It's unlikely that it will rain today.","It's unlikely that we will get a refund.","It's unlikely that he will apologize.","It's unlikely that the project will be done by Friday.","It's unlikely that the team will win."] },
+      { n:65, pat:"It's essential that + [Sentence]", ben:"এটা জরুরি যে ...", pro:"ইটস এসেনশিয়াল দ্যাট", pool:["It's essential that you take your medicine.","It's essential that we meet the deadline.","It's essential that everyone wears a seatbelt.","It's essential that she gets enough sleep.","It's essential that we stay hydrated.","It's essential that all documents are signed.","It's essential that you follow the safety rules.","It's essential that we communicate clearly."] },
+      { n:66, pat:"It's important to + [Verb]", ben:"... করা গুরুত্বপূর্ণ।", pro:"ইটস ইম্পর্ট্যান্ট টু", pool:["It's important to stay healthy.","It's important to listen carefully.","It's important to be honest.","It's important to respect others.","It's important to plan ahead.","It's important to keep your promises.","It's important to exercise regularly.","It's important to get enough sleep."] },
+      { n:67, pat:"It's necessary to + [Verb]", ben:"... করা প্রয়োজনীয়।", pro:"ইটস নেসেসারি টু", pool:["It's necessary to have an ID.","It's necessary to book in advance.","It's necessary to save money for emergencies.","It's necessary to read the instructions first.","It's necessary to see a doctor.","It's necessary to back up your data.","It's necessary to lock the door.","It's necessary to drink clean water."] },
+      { n:68, pat:"It's possible to + [Verb]", ben:"... করা সম্ভব।", pro:"ইটস পসিবল টু", pool:["It's possible to learn any language.","It's possible to succeed without a degree.","It's possible to live on a budget.","It's possible to finish the work today.","It's possible to change bad habits.","It's possible to travel cheaply.","It's possible to be happy alone.","It's possible to recover from failure."] },
+      { n:69, pat:"It's impossible to + [Verb]", ben:"... করা অসম্ভব।", pro:"ইটস ইমপসিবল টু", pool:["It's impossible to please everyone.","It's impossible to predict the future.","It's impossible to forget that day.","It's impossible to ignore the problem.","It's impossible to finish this in one day.","It's impossible to lie to her.","It's impossible to walk in this heat.","It's impossible to live without water."] },
+      { n:70, pat:"It's hard to + [Verb]", ben:"... করা কঠিন।", pro:"ইটস হার্ড টু", pool:["It's hard to say goodbye.","It's hard to wake up early every day.","It's hard to forgive someone who hurt you.","It's hard to focus in a noisy room.","It's hard to change old habits.","It's hard to make ends meet.","It's hard to trust again after being betrayed.","It's hard to watch someone suffer."] }
+    ],
+    [
+      { n:71, pat:"It's easy to + [Verb]", ben:"... করা সহজ।", pro:"ইটস ইজি টু", pool:["It's easy to make mistakes.","It's easy to judge others.","It's easy to get distracted.","It's easy to lose track of time.","It's easy to get along with him.","It's easy to learn when you enjoy it.","It's easy to overlook the small details.","It's easy to say but hard to do."] },
+      { n:72, pat:"It's fun to + [Verb]", ben:"... করা মজাদার।", pro:"ইটস ফান টু", pool:["It's fun to try new foods.","It's fun to play board games with family.","It's fun to travel to new places.","It's fun to learn a new language.","It's fun to decorate for the holidays.","It's fun to explore the city on foot.","It's fun to sing in the rain.","It's fun to cook new recipes."] },
+      { n:73, pat:"It's dangerous to + [Verb]", ben:"... করা বিপজ্জনক।", pro:"ইটস ডেঞ্জারাস টু", pool:["It's dangerous to drive in a storm.","It's dangerous to text while walking.","It's dangerous to swim alone.","It's dangerous to trust strangers online.","It's dangerous to ignore symptoms.","It's dangerous to play with fire.","It's dangerous to walk alone at night.","It's dangerous to speed on wet roads."] },
+      { n:74, pat:"It's safe to + [Verb]", ben:"... করা নিরাপদ।", pro:"ইটস সেইফ টু", pool:["It's safe to drink tap water here.","It's safe to walk in this neighborhood.","It's safe to use this medication.","It's safe to travel by train.","It's safe to assume he knows.","It's safe to say we made the right choice.","It's safe to share this information.","It's safe to open the windows now."] },
+      { n:75, pat:"It's expensive to + [Verb]", ben:"... করা ব্যয়বহুল।", pro:"ইটস এক্সপেনসিভ টু", pool:["It's expensive to live in London.","It's expensive to study abroad.","It's expensive to eat out every day.","It's expensive to own a car in the city.","It's expensive to maintain this property.","It's expensive to travel first class.","It's expensive to renovate a house.","It's expensive to hire a lawyer."] },
+      { n:76, pat:"It's cheap to + [Verb]", ben:"... করা সস্তা।", pro:"ইটস চিপ টু", pool:["It's cheap to cook at home.","It's cheap to buy second-hand clothes.","It's cheap to use public transport.","It's cheap to travel by bus.","It's cheap to grow your own vegetables.","It's cheap to buy in bulk.","It's cheap to rent a room outside the city.","It's cheap to stream movies online."] },
+      { n:77, pat:"It's unusual to + [Verb]", ben:"... করা অস্বাভাবিক।", pro:"ইটস আনইউজুয়াল টু", pool:["It's unusual to see snow in April.","It's unusual to find him quiet.","It's unusual to get a refund so quickly.","It's unusual to meet someone so kind.","It's unusual to see this bird in the city.","It's unusual to work without a break.","It's unusual to receive a letter these days.","It's unusual to feel this nervous."] },
+      { n:78, pat:"It's common to + [Verb]", ben:"... করা সাধারণ।", pro:"ইটস কমন টু", pool:["It's common to feel nervous before exams.","It's common to get homesick abroad.","It's common to make mistakes while learning.","It's common to forget names.","It's common to feel tired after a long day.","It's common to argue with siblings.","It's common to feel anxious in new situations.","It's common to oversleep on weekends."] },
+      { n:79, pat:"It's better to + [Verb]", ben:"... করা ভালো।", pro:"ইটস বেটার টু", pool:["It's better to be honest.","It's better to arrive early than late.","It's better to ask than assume.","It's better to forgive and move on.","It's better to try and fail than not try.","It's better to save money than spend it all.","It's better to speak up now.","It's better to sleep early and wake up fresh."] },
+      { n:80, pat:"It's worse to + [Verb]", ben:"... করা আরও খারাপ।", pro:"ইটস ওয়ার্স টু", pool:["It's worse to lie than admit a mistake.","It's worse to ignore the problem.","It's worse to pretend everything is fine.","It's worse to give up than to keep trying.","It's worse to blame others for your failures.","It's worse to stay in a toxic relationship.","It's worse to suffer in silence.","It's worse to make a hasty decision."] }
+    ],
+    [
+      { n:81, pat:"I have to + [Verb]", ben:"আমাকে ... করতে হবে।", pro:"আই হ্যাভ টু", pool:["I have to finish this report by tonight.","I have to take my medicine now.","She has to leave early tomorrow.","I have to apologize to him.","He has to attend the meeting.","We have to find a solution quickly.","I have to pay the rent this week.","I have to call my parents."] },
+      { n:82, pat:"I don't have to + [Verb]", ben:"আমাকে ... করতে হবে না।", pro:"আই ডোন্ট হ্যাভ টু", pool:["I don't have to go if I don't want to.","She doesn't have to wear a uniform.","I don't have to explain myself to you.","He doesn't have to work on Sundays.","We don't have to rush.","I don't have to follow their rules.","I don't have to pretend anymore.","She doesn't have to do it alone."] },
+      { n:83, pat:"I must + [Verb]", ben:"আমাকে অবশ্যই ... করতে হবে।", pro:"আই মাস্ট", pool:["I must remember to call him back.","I must finish reading this chapter.","She must stop worrying so much.","I must be more careful next time.","He must return the book by Friday.","We must respect each other's opinions.","I must stop wasting time.","I must thank her for her help."] },
+      { n:84, pat:"I should + [Verb]", ben:"আমার ... করা উচিত।", pro:"আই শুড", pool:["I should exercise more regularly.","I should apologize to her.","She should eat something before leaving.","I should start saving money.","He should get some rest.","We should talk about this calmly.","I should have listened to your advice.","I should go to bed earlier."] },
+      { n:85, pat:"I shouldn't + [Verb]", ben:"আমার ... করা উচিত নয়।", pro:"আই শুডন্ট", pool:["I shouldn't have said that.","I shouldn't waste so much time.","She shouldn't trust him blindly.","I shouldn't eat junk food every day.","He shouldn't be so rude.","We shouldn't give up so easily.","I shouldn't have made that decision.","I shouldn't blame myself too much."] },
+      { n:86, pat:"I could + [Verb]", ben:"আমি ... করতে পারতাম।", pro:"আই কুড", pool:["I could help you if you asked me.","She could sing beautifully when she was young.","I could run 10km without stopping.","He could solve the problem easily.","We could meet up for coffee.","I could hear the music from outside.","I could tell something was wrong.","I could see the mountains from there."] },
+      { n:87, pat:"I couldn't + [Verb]", ben:"আমি ... করতে পারতাম না।", pro:"আই কুডন্ট", pool:["I couldn't believe what I heard.","I couldn't stop laughing.","She couldn't find her keys.","I couldn't sleep last night.","He couldn't finish the race.","We couldn't agree on anything.","I couldn't hold back my tears.","I couldn't afford the ticket."] },
+      { n:88, pat:"I would + [Verb]", ben:"আমি ... করতাম।", pro:"আই উড", pool:["I would love to visit Japan someday.","I would prefer coffee over tea.","She would always bring flowers on Sundays.","I would never lie to you.","He would do anything for her.","We would go camping every summer.","I would appreciate your help.","I would not miss this for the world."] },
+      { n:89, pat:"I wouldn't + [Verb]", ben:"আমি ... করতাম না।", pro:"আই উডন্ট", pool:["I wouldn't do that if I were you.","I wouldn't trust him with my money.","She wouldn't change her mind.","I wouldn't dare to disagree with him.","He wouldn't accept the offer.","We wouldn't have known without you.","I wouldn't recommend this hotel.","I wouldn't risk it."] },
+      { n:90, pat:"I might + [Verb]", ben:"আমি হয়তো ... করতে পারি।", pro:"আই মাইট", pool:["I might come to the party.","I might be late tonight.","She might call you tomorrow.","I might need your help.","He might have forgotten.","We might change our plans.","I might try a different approach.","I might not be able to attend."] }
+    ],
+    [
+      { n:91, pat:"I might not + [Verb]", ben:"আমি হয়তো ... নাও করতে পারি।", pro:"আই মাইট নট", pool:["I might not be able to come.","I might not agree with you on this.","She might not remember me.","I might not have enough time.","He might not show up.","We might not find a solution easily.","I might not pass the exam.","I might not be the right person for this."] },
+      { n:92, pat:"I can + [Verb]", ben:"আমি ... করতে পারি।", pro:"আই ক্যান", pool:["I can speak three languages.","I can help you with that.","She can finish the task quickly.","I can see the problem clearly.","He can play the guitar well.","We can solve this together.","I can handle the pressure.","I can understand how you feel."] },
+      { n:93, pat:"I can't + [Verb]", ben:"আমি ... করতে পারি না।", pro:"আই ক্যান্ট", pool:["I can't believe this happened.","I can't accept this offer.","She can't lie to save her life.","I can't ignore the problem.","He can't control his temper.","We can't afford this right now.","I can't find the right words.","I can't imagine life without music."] },
+      { n:94, pat:"Do you mind if I + [Verb]?", ben:"আমি কি ... করতে পারি? (অনুমতি)", pro:"ডু ইউ মাইন্ড ইফ আই", pool:["Do you mind if I sit here?","Do you mind if I open the window?","Do you mind if I ask you something?","Do you mind if I borrow your pen?","Do you mind if I turn off the lights?","Do you mind if I join you?","Do you mind if I take a photo?","Do you mind if I change the channel?"] },
+      { n:95, pat:"Would you mind + [Verb+ing]?", ben:"আপনি কি দয়া করে ... করবেন?", pro:"উড ইউ মাইন্ড", pool:["Would you mind turning down the music?","Would you mind helping me carry this?","Would you mind waiting for a moment?","Would you mind explaining that again?","Would you mind closing the door?","Would you mind giving me a hand?","Would you mind moving your car?","Would you mind repeating that?"] },
+      { n:96, pat:"Can you tell me how to + [Verb]?", ben:"আপনি কি আমাকে বলতে পারেন কিভাবে ... করতে হয়?", pro:"ক্যান ইউ টেল মি হাউ টু", pool:["Can you tell me how to get to the station?","Can you tell me how to apply for the visa?","Can you tell me how to fix this error?","Can you tell me how to use this machine?","Can you tell me how to improve my English?","Can you tell me how to make pasta?","Can you tell me how to reset my password?","Can you tell me how to find this place?"] },
+      { n:97, pat:"Could you please + [Verb]?", ben:"আপনি কি দয়া করে ... করবেন?", pro:"কুড ইউ প্লিজ", pool:["Could you please speak more slowly?","Could you please send me the file?","Could you please wait outside?","Could you please explain it again?","Could you please lower your voice?","Could you please pass the salt?","Could you please help me with this form?","Could you please call me back later?"] },
+      { n:98, pat:"I'd like to + [Verb]", ben:"আমি ... করতে চাই।", pro:"আইড লাইক টু", pool:["I'd like to book a table for two.","I'd like to speak with the manager.","I'd like to apply for this position.","I'd like to know more about this product.","I'd like to make a reservation.","I'd like to order the grilled chicken.","I'd like to take a day off.","I'd like to introduce my colleague."] },
+      { n:99, pat:"I want you to + [Verb]", ben:"আমি চাই তুমি ... করো।", pro:"আই ওয়ান্ট ইউ টু", pool:["I want you to be honest with me.","I want you to finish this by tomorrow.","I want you to meet my parents.","I want you to promise me something.","I want you to stop worrying.","I want you to try this dish.","I want you to come with me.","I want you to take care of yourself."] },
+      { n:100, pat:"I need you to + [Verb]", ben:"আমার তোমাকে দিয়ে ... করানো দরকার।", pro:"আই নিড ইউ টু", pool:["I need you to sign this document.","I need you to listen carefully.","I need you to stay calm.","I need you to cover for me today.","I need you to be here on time.","I need you to explain this to them.","I need you to trust me on this.","I need you to handle this situation."] }
+    ]
+  ]},
+  sec3: { name:"3rd 50", levels: generatePlaceholderLevels(3, 101) },
+  sec4: { name:"4th 50", levels: generatePlaceholderLevels(4, 151) },
+  sec5: { name:"5th 50", levels: generatePlaceholderLevels(5, 201) },
+  sec6: { name:"6th 50", levels: generatePlaceholderLevels(6, 251) }
+};
+
+function generatePlaceholderLevels(secNum, startN) {
+  const levels = [];
+  for (let l = 0; l < 5; l++) {
+    const items = [];
+    for (let i = 0; i < 10; i++) {
+      const n = startN + l * 10 + i;
+      items.push({
+        n, pat:`Pattern #${n} — Section ${secNum} Level ${l+1}`,
+        ben:`এই প্যাটার্নটি সেকশন ${secNum}, লেভেল ${l+1} এ রয়েছে।`,
+        pro:`প্যাটার্ন উচ্চারণ`,
+        pool:[
+          `Example sentence 1 for pattern ${n}.`,
+          `Example sentence 2 for pattern ${n}.`,
+          `Example sentence 3 for pattern ${n}.`,
+          `Example sentence 4 for pattern ${n}.`,
+          `Example sentence 5 for pattern ${n}.`
+        ]
+      });
+    }
+    levels.push(items);
+  }
+  return levels;
+}
+
+// ===================================================
+//  STATE & AUTH
+// ===================================================
+let currentSection = 'sec1';
+let currentLevel = 0;
+let currentUser = null;
+
+function getUsers() { try { return JSON.parse(localStorage.getItem('epUsers') || '{}'); } catch(e) { return {}; } }
+function saveUsers(u) { localStorage.setItem('epUsers', JSON.stringify(u)); }
+function getCurrentUser() { try { return JSON.parse(localStorage.getItem('epCurrentUser') || 'null'); } catch(e) { return null; } }
+function saveCurrentUser(u) { localStorage.setItem('epCurrentUser', u ? JSON.stringify(u) : 'null'); }
+
+function getUnlocked(email) {
+  try {
+    const data = JSON.parse(localStorage.getItem('epUnlocked') || '{}');
+    return data[email] || { sec1: [0] };
+  } catch(e) { return { sec1: [0] }; }
+}
+function saveUnlocked(email, obj) {
+  const data = JSON.parse(localStorage.getItem('epUnlocked') || '{}');
+  data[email] = obj;
+  localStorage.setItem('epUnlocked', JSON.stringify(data));
+}
+
+function getHistory(email) {
+  try { return JSON.parse(localStorage.getItem('epHistory_' + email) || '[]'); } catch(e) { return []; }
+}
+function saveHistory(email, arr) { localStorage.setItem('epHistory_' + email, JSON.stringify(arr)); }
+
+function isUnlocked(secKey, levelIdx) {
+  if (secKey === 'sec1' && levelIdx === 0) return true;
+  if (!currentUser) return false;
+  const u = getUnlocked(currentUser.email);
+  return (u[secKey] || []).includes(levelIdx);
+}
+
+// ===================================================
+//  MODAL HELPERS
+// ===================================================
+function openModal(id) { document.getElementById(id).classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+function showErr(id, msg) { const el = document.getElementById(id); el.textContent = msg; el.style.display = 'block'; }
+function hideMsg(id) { const el = document.getElementById(id); if(el) el.style.display = 'none'; }
+
+// ===================================================
+//  AUTH FUNCTIONS
+// ===================================================
+function doSignup() {
+  const name = document.getElementById('signupName').value.trim();
+  const email = document.getElementById('signupEmail').value.trim().toLowerCase();
+  const password = document.getElementById('signupPassword').value;
+  hideMsg('signupError');
+  if (!name || !email || !password) return showErr('signupError', 'All fields are required.');
+  if (!email.includes('@')) return showErr('signupError', 'Enter a valid email.');
+  if (password.length < 6) return showErr('signupError', 'Password must be at least 6 characters.');
+  const users = getUsers();
+  if (users[email]) return showErr('signupError', 'An account with this email already exists.');
+  users[email] = { name, email, password, address: '', pic: '' };
+  saveUsers(users);
+  currentUser = users[email];
+  saveCurrentUser(currentUser);
+  closeModal('signupModal');
+  updateHeader();
+  renderAll();
+}
+
+function doLogin() {
+  const email = document.getElementById('loginEmail').value.trim().toLowerCase();
+  const password = document.getElementById('loginPassword').value;
+  hideMsg('loginError');
+  const users = getUsers();
+  if (!users[email] || users[email].password !== password) return showErr('loginError', 'Invalid email or password.');
+  currentUser = users[email];
+  saveCurrentUser(currentUser);
+  closeModal('loginModal');
+  updateHeader();
+  renderAll();
+}
+
+function doLogout() {
+  currentUser = null;
+  saveCurrentUser(null);
+  updateHeader();
+  currentSection = 'sec1';
+  currentLevel = 0;
+  renderAll();
+}
+
+function doForgotPassword() {
+  const email = document.getElementById('forgotEmail').value.trim().toLowerCase();
+  const newPass = document.getElementById('forgotNewPass').value;
+  hideMsg('forgotError'); hideMsg('forgotSuccess');
+  const users = getUsers();
+  if (!users[email]) return showErr('forgotError', 'No account found with this email.');
+  if (newPass.length < 6) return showErr('forgotError', 'New password must be at least 6 characters.');
+  users[email].password = newPass;
+  saveUsers(users);
+  if (currentUser && currentUser.email === email) { currentUser.password = newPass; saveCurrentUser(currentUser); }
+  document.getElementById('forgotSuccess').style.display = 'block';
+}
+
+function doChangePassword() {
+  if (!currentUser) return;
+  const curr = document.getElementById('cpCurrent').value;
+  const newp = document.getElementById('cpNew').value;
+  hideMsg('cpError'); hideMsg('cpSuccess');
+  if (curr !== currentUser.password) return showErr('cpError', 'Current password is incorrect.');
+  if (newp.length < 6) return showErr('cpError', 'New password must be at least 6 characters.');
+  const users = getUsers();
+  users[currentUser.email].password = newp;
+  saveUsers(users);
+  currentUser.password = newp;
+  saveCurrentUser(currentUser);
+  document.getElementById('cpSuccess').style.display = 'block';
+}
+
+function doEditProfile() {
+  if (!currentUser) return;
+  const name = document.getElementById('epName').value.trim();
+  const address = document.getElementById('epAddress').value.trim();
+  const pic = document.getElementById('epPic').value.trim();
+  hideMsg('epError');
+  if (!name) return showErr('epError', 'Name cannot be empty.');
+  const users = getUsers();
+  users[currentUser.email].name = name;
+  users[currentUser.email].address = address;
+  users[currentUser.email].pic = pic;
+  saveUsers(users);
+  currentUser = users[currentUser.email];
+  saveCurrentUser(currentUser);
+  closeModal('editProfileModal');
+  if (showingProfile) showProfile();
+}
+
+function switchToSignup() { closeModal('loginModal'); openModal('signupModal'); }
+function switchToLogin() { closeModal('signupModal'); openModal('loginModal'); }
+function switchToForgot() { closeModal('loginModal'); openModal('forgotModal'); }
+
+// ===================================================
+//  HEADER UPDATE
+// ===================================================
+function updateHeader() {
+  const ha = document.getElementById('headerActions');
+  if (currentUser) {
+    ha.innerHTML = `
+      <button class="hdr-btn gold" onclick="showProfile()">👤 ${currentUser.name.split(' ')[0]}</button>
+      <button class="hdr-btn" onclick="doLogout()">Logout</button>`;
+  } else {
+    ha.innerHTML = `
+      <button class="hdr-btn" onclick="openModal('loginModal')">Login</button>
+      <button class="hdr-btn gold" onclick="openModal('signupModal')">Sign Up</button>`;
+  }
+}
+
+// ===================================================
+//  RENDER NAVIGATION
+// ===================================================
+function renderNav() {
+  const nav = document.getElementById('mainNav');
+  nav.innerHTML = Object.keys(ALL_DATA).map(key => {
+    return `<button class="nav-btn ${key === currentSection ? 'active' : ''}" onclick="switchSection('${key}')">${ALL_DATA[key].name}</button>`;
+  }).join('');
+}
+
+function renderLevelTabs() {
+  const lt = document.getElementById('levelTabs');
+  const sec = ALL_DATA[currentSection];
+  lt.innerHTML = sec.levels.map((_, i) => {
+    const unlocked = isUnlocked(currentSection, i);
+    const active = i === currentLevel;
+    return `<button class="level-btn ${unlocked ? 'unlocked' : 'locked'} ${active && unlocked ? 'active' : ''}" onclick="switchLevel(${i})">
+      ${unlocked ? '' : '<span class="lock-icon">🔒</span>'}Level ${i+1}</button>`;
+  }).join('');
+}
+
+function renderAll() {
+  renderNav();
+  renderLevelTabs();
+  renderContent();
+}
+
+function renderContent() {
+  const container = document.getElementById('mainContainer');
+  if (showingProfile) { showProfile(); return; }
+
+  if (!isUnlocked(currentSection, currentLevel)) {
+    const needLogin = !currentUser;
+    container.innerHTML = `
+      <div class="lock-overlay">
+        <h2>🔒</h2>
+        <p>This level is <strong>locked</strong>.</p>
+        <p style="margin-top:10px;">${needLogin
+          ? 'Please <strong>login or create an account</strong>, then complete the previous level quiz with <strong>80% or higher</strong> to unlock this level.'
+          : 'Complete the previous level quiz with <strong>80% or higher</strong> to unlock this level.'}</p>
+        ${needLogin ? `<button class="quiz-launch-btn" style="margin-top:20px;" onclick="openModal('loginModal')">🔑 Login / Sign Up</button>` : ''}
+      </div>`;
+    return;
+  }
+
+  const patterns = ALL_DATA[currentSection].levels[currentLevel];
+  let html = `<div class="grid" id="currentGrid"></div>`;
+  if (currentLevel < 4) {
+    html += `<button class="quiz-launch-btn" onclick="launchQuiz()">📝 Take Level ${currentLevel+1} Quiz to Unlock Next Level</button>`;
+  }
+  container.innerHTML = html;
+
+  const grid = document.getElementById('currentGrid');
+  patterns.forEach((item, index) => {
+    grid.innerHTML += buildCard(item, index);
+  });
+}
+
+function buildCard(item, index) {
+  const safeAudio = item.pat.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+  return `
+    <div class="flashcard-wrapper" id="card-${item.n}" onclick="toggleCard(${item.n}, ${index})">
+      <div class="flashcard">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span class="pattern-num">Pattern #${item.n}</span>
+          <button class="audio-btn" onclick="event.stopPropagation();playAudio('${safeAudio}')">🔊</button>
+        </div>
+        <div class="pattern-eng">${item.pat}</div>
+        <div class="pattern-ben">🎯 ${item.ben}</div>
+        <div class="pattern-pro">🗣️ ${item.pro}</div>
+        <div class="examples-container" id="examples-${item.n}"></div>
+        <button class="main-audio-btn audio-btn" onclick="event.stopPropagation();playAudio('${safeAudio}')">🎙️ Listen to Pattern</button>
+      </div>
+    </div>`;
+}
+
+function toggleCard(id, dataIndex) {
+  const cardWrapper = document.getElementById(`card-${id}`);
+  const isActive = cardWrapper.classList.contains('active');
+  document.querySelectorAll('.flashcard-wrapper').forEach(el => el.classList.remove('active'));
+  if (!isActive) {
+    cardWrapper.classList.add('active');
+    const pool = ALL_DATA[currentSection].levels[currentLevel][dataIndex].pool;
+    const randomExamples = shuffleArray(pool).slice(0, 5);
+    const ec = document.getElementById(`examples-${id}`);
+    ec.innerHTML = '<div style="color:var(--pink);font-size:0.8rem;letter-spacing:1px;margin-bottom:5px;font-weight:bold;">⚡ EXAMPLES</div>';
+    randomExamples.forEach((ex, idx) => {
+      const safeEx = ex.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+      ec.innerHTML += `
+        <div class="example-item">
+          <span class="example-text">${idx+1}. ${ex}</span>
+          <button class="audio-btn" style="width:24px;height:24px;font-size:10px;" onclick="event.stopPropagation();playAudio('${safeEx}')">▶</button>
+        </div>`;
+    });
+  }
+}
+
+function switchSection(key) { currentSection = key; currentLevel = 0; showingProfile = false; renderAll(); }
+
+function switchLevel(idx) {
+  if (!isUnlocked(currentSection, idx)) {
+    if (!currentUser) { openModal('needLoginModal'); return; }
+    currentLevel = idx;
+    renderLevelTabs();
+    renderContent();
+    return;
+  }
+  currentLevel = idx;
+  showingProfile = false;
+  renderLevelTabs();
+  renderContent();
+}
+
+// ===================================================
+//  QUIZ — ENHANCED BILINGUAL SYSTEM
+// ===================================================
+let quizData = [];
+let quizAnswers = [];
+let quizCurrent = 0;
+
+/**
+ * Build quiz questions — THREE question types mixed:
+ * 1. eng2ben  : ইংরেজি বাক্য দেওয়া → সঠিক বাংলা অর্থ বেছে নাও (pattern meaning)
+ * 2. ben2eng  : বাংলা অর্থ দেওয়া → সঠিক ইংরেজি বাক্য বেছে নাও
+ * 3. pat2ben  : Pattern structure দেওয়া → সঠিক বাংলা অর্থ বেছে নাও
+ *
+ * Questions are shuffled so each quiz feels different.
+ */
+function buildQuizQuestions(patterns) {
+  const questions = [];
+
+  patterns.forEach((p, idx) => {
+    // Pick a random example from this pattern's pool
+    const correctExample = p.pool[Math.floor(Math.random() * p.pool.length)];
+
+    // Collect wrong English examples from OTHER patterns
+    const wrongEngPool = patterns
+      .filter((_, i) => i !== idx)
+      .flatMap(op => op.pool);
+    const wrongEngOptions = shuffleArray(wrongEngPool).slice(0, 3);
+
+    // Collect wrong Bengali meanings from OTHER patterns
+    const wrongBenPool = patterns
+      .filter((_, i) => i !== idx)
+      .map(op => op.ben);
+    const wrongBenOptions = shuffleArray(wrongBenPool).slice(0, 3);
+
+    // ── TYPE 1: English sentence → Bengali meaning ──
+    // Show an example sentence, pick the correct Bengali pattern meaning
+    questions.push({
+      type: 'eng2ben',
+      question: `নিচের ইংরেজি বাক্যটি কোন বাংলা প্যাটার্নের অন্তর্গত?\n\n"${correctExample}"`,
+      patternHint: `Pattern: ${p.pat}`,
+      options: shuffleArray([p.ben, ...wrongBenOptions]),
+      correct: p.ben
+    });
+
+    // ── TYPE 2: Bengali meaning → correct English sentence ──
+    // Show Bengali pattern meaning, pick the matching English sentence
+    questions.push({
+      type: 'ben2eng',
+      question: `নিচের বাংলা অর্থের সাথে মিলে যায় এমন সঠিক ইংরেজি বাক্যটি বেছে নিন:\n\n"${p.ben}"`,
+      patternHint: `Pattern: ${p.pat}`,
+      options: shuffleArray([correctExample, ...wrongEngOptions]),
+      correct: correctExample
+    });
+  });
+
+  // Shuffle all questions and pick 15 (or all if fewer)
+  return shuffleArray(questions).slice(0, 15);
+}
+
+function launchQuiz() {
+  if (!currentUser) { openModal('needLoginModal'); return; }
+  const patterns = ALL_DATA[currentSection].levels[currentLevel];
+  quizData = buildQuizQuestions(patterns);
+  quizAnswers = new Array(quizData.length).fill(null);
+  quizCurrent = 0;
+
+  document.getElementById('quizTitle').textContent = `📝 Level ${currentLevel+1} Quiz`;
+  openModal('quizModal');
+  renderQuizQuestion();
+}
+
+function renderQuizQuestion() {
+  const q = quizData[quizCurrent];
+  const body = document.getElementById('quizBody');
+  const pct = Math.round((quizCurrent / quizData.length) * 100);
+
+  // Badge based on question type
+  const badgeMap = {
+    eng2ben: '<span class="quiz-type-badge badge-eng2ben">🇧🇩 সঠিক বাংলা অর্থ বেছে নিন</span>',
+    ben2eng: '<span class="quiz-type-badge badge-ben2eng">🇬🇧 সঠিক ইংরেজি বাক্য বেছে নিন</span>',
+    pat2ben: '<span class="quiz-type-badge badge-pat2eng">🎯 প্যাটার্নের অর্থ বেছে নিন</span>'
+  };
+
+  body.innerHTML = `
+    <div class="progress-bar-wrap"><div class="progress-bar" style="width:${pct}%"></div></div>
+    <div class="quiz-progress">প্রশ্ন ${quizCurrent+1} / ${quizData.length}</div>
+    ${badgeMap[q.type] || ''}
+    <div class="quiz-question">
+      <div class="quiz-q-num">Q${quizCurrent+1}</div>
+      ${q.question.replace(/\n/g, '<br>')}
+      <div class="quiz-pattern-hint">${q.patternHint}</div>
+    </div>
+    <div class="quiz-options" id="quizOpts">
+      ${q.options.map((opt, i) => {
+        const isSelected = quizAnswers[quizCurrent] === opt;
+        return `<button class="quiz-option ${isSelected ? 'selected' : ''}" onclick="selectAnswer(${i})">${opt}</button>`;
+      }).join('')}
+    </div>
+    <div id="quizFeedback"></div>
+    <div class="quiz-nav" style="margin-top:15px;">
+      ${quizCurrent > 0 ? `<button class="quiz-nav-btn" onclick="quizPrev()">← আগে</button>` : ''}
+      ${quizCurrent < quizData.length - 1
+        ? `<button class="quiz-nav-btn" onclick="quizNext()">পরে →</button>`
+        : `<button class="quiz-nav-btn" style="background:var(--green);color:#000;border-color:var(--green);" onclick="submitQuiz()">জমা দিন ✓</button>`
+      }
+    </div>`;
+}
+
+function selectAnswer(idx) {
+  const q = quizData[quizCurrent];
+  const chosen = q.options[idx];
+  quizAnswers[quizCurrent] = chosen;
+
+  // Highlight selection
+  document.querySelectorAll('.quiz-option').forEach((btn, i) => {
+    btn.classList.remove('selected', 'correct', 'wrong');
+    btn.disabled = true; // Lock after selection
+    if (i === idx) {
+      btn.classList.add(chosen === q.correct ? 'correct' : 'wrong');
+    } else if (q.options[i] === q.correct) {
+      btn.classList.add('correct'); // Always show correct answer
+    }
+  });
+
+  // Show instant feedback
+  const fb = document.getElementById('quizFeedback');
+  if (chosen === q.correct) {
+    fb.innerHTML = `<div class="quiz-feedback correct-fb">✅ সঠিক উত্তর! দারুণ হয়েছে!</div>`;
+  } else {
+    fb.innerHTML = `<div class="quiz-feedback wrong-fb">❌ ভুল হয়েছে। সঠিক উত্তর সবুজ রঙে দেখানো হয়েছে।</div>`;
+  }
+}
+
+function quizNext() {
+  if (quizAnswers[quizCurrent] === null) { alert('একটি উত্তর বেছে নিন।'); return; }
+  quizCurrent++;
+  renderQuizQuestion();
+}
+
+function quizPrev() {
+  quizCurrent--;
+  renderQuizQuestion();
+}
+
+function submitQuiz() {
+  if (quizAnswers[quizCurrent] === null) { alert('একটি উত্তর বেছে নিন।'); return; }
+
+  let correctCount = 0;
+  quizData.forEach((q, i) => { if (quizAnswers[i] === q.correct) correctCount++; });
+  const score = Math.round((correctCount / quizData.length) * 100);
+  const passed = score >= 80;
+
+  // Save history
+  const history = getHistory(currentUser.email);
+  history.unshift({
+    date: new Date().toLocaleDateString(),
+    section: ALL_DATA[currentSection].name,
+    level: currentLevel + 1,
+    score, passed
+  });
+  saveHistory(currentUser.email, history.slice(0, 50));
+
+  // Unlock next level if passed
+  if (passed) {
+    const unlocked = getUnlocked(currentUser.email);
+    if (!unlocked[currentSection]) unlocked[currentSection] = [0];
+    const nextLevel = currentLevel + 1;
+    if (nextLevel < 5 && !unlocked[currentSection].includes(nextLevel)) {
+      unlocked[currentSection].push(nextLevel);
+    }
+    saveUnlocked(currentUser.email, unlocked);
+  }
+
+  // Build review items (show wrong answers)
+  const wrongItems = quizData
+    .map((q, i) => ({ q, answered: quizAnswers[i], ok: quizAnswers[i] === q.correct }))
+    .filter(item => !item.ok)
+    .slice(0, 5);
+
+  const body = document.getElementById('quizBody');
+  body.innerHTML = `
+    <div class="quiz-result">
+      <div class="quiz-score">${score}%</div>
+      <div class="quiz-result-msg">${passed ? '🎉 অভিনন্দন! আপনি পাস করেছেন!' : '😔 পাস করতে ৮০% লাগবে। আরেকবার চেষ্টা করুন।'}</div>
+
+      <div class="quiz-stat-row">
+        <div class="quiz-stat-box correct-box">
+          <div class="quiz-stat-num">${correctCount}</div>
+          <div class="quiz-stat-label">✅ সঠিক</div>
+        </div>
+        <div class="quiz-stat-box wrong-box">
+          <div class="quiz-stat-num">${quizData.length - correctCount}</div>
+          <div class="quiz-stat-label">❌ ভুল</div>
+        </div>
+      </div>
+
+      <div class="quiz-result-sub">
+        মোট ${quizData.length}টি প্রশ্নের মধ্যে ${correctCount}টি সঠিক
+        ${passed && currentLevel < 4 ? ` — Level ${currentLevel+2} এখন আনলক হয়েছে! 🔓` : ''}
+      </div>
+
+      ${wrongItems.length > 0 ? `
+        <div class="review-section">
+          <div class="review-title">📖 ভুল উত্তরের পর্যালোচনা</div>
+          ${wrongItems.map(item => `
+            <div class="review-item bad">
+              <div class="ri-q">${item.q.question.replace(/\n/g,'').substring(0,80)}...</div>
+              <div class="ri-correct">✅ সঠিক: ${item.q.correct.substring(0,70)}</div>
+              <div class="ri-wrong">❌ আপনার: ${(item.answered||'উত্তর দেননি').substring(0,70)}</div>
+            </div>`).join('')}
+        </div>` : `<div style="color:var(--green);font-weight:700;margin:10px 0;">🌟 সব উত্তর সঠিক! অসাধারণ!</div>`
+      }
+
+      <div style="display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap;">
+        <button class="quiz-nav-btn" onclick="closeModal('quizModal');renderAll();">
+          ${passed ? '✅ পরবর্তী লেভেলে যান' : '← ফিরে যান'}
+        </button>
+        ${!passed ? `<button class="quiz-nav-btn" style="border-color:var(--pink);color:var(--pink);" onclick="launchQuiz()">🔄 আবার চেষ্টা করুন</button>` : ''}
+      </div>
+    </div>`;
+}
+
+// ===================================================
+//  PROFILE
+// ===================================================
+let showingProfile = false;
+
+function showProfile() {
+  if (!currentUser) { openModal('loginModal'); return; }
+  showingProfile = true;
+  const history = getHistory(currentUser.email);
+  const unlocked = getUnlocked(currentUser.email);
+  let totalUnlocked = 0;
+  Object.values(unlocked).forEach(arr => totalUnlocked += arr.length);
+
+  const container = document.getElementById('mainContainer');
+  container.innerHTML = `
+    <div class="profile-box">
+      <div class="profile-avatar-wrap">
+        ${currentUser.pic
+          ? `<img class="profile-avatar" src="${currentUser.pic}" onerror="this.style.display='none'" alt="Profile">`
+          : `<div class="profile-avatar-placeholder">👤</div>`}
+        <div class="profile-name-display">${currentUser.name}</div>
+        <div class="profile-email-display">${currentUser.email}</div>
+        ${currentUser.address ? `<div style="color:#888;font-size:0.8rem;margin-top:4px;">📍 ${currentUser.address}</div>` : ''}
+      </div>
+
+      <div class="profile-section-title">📊 Progress</div>
+      <div style="display:flex;gap:15px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:120px;background:rgba(0,240,255,0.07);border:1px solid rgba(0,240,255,0.2);border-radius:12px;padding:15px;text-align:center;">
+          <div style="font-size:2rem;font-weight:700;color:var(--aqua);">${totalUnlocked}</div>
+          <div style="font-size:0.75rem;color:#888;">Levels Unlocked</div>
+        </div>
+        <div style="flex:1;min-width:120px;background:rgba(0,255,136,0.07);border:1px solid rgba(0,255,136,0.2);border-radius:12px;padding:15px;text-align:center;">
+          <div style="font-size:2rem;font-weight:700;color:var(--green);">${history.filter(h=>h.passed).length}</div>
+          <div style="font-size:0.75rem;color:#888;">Quizzes Passed</div>
+        </div>
+        <div style="flex:1;min-width:120px;background:rgba(255,207,84,0.07);border:1px solid rgba(255,207,84,0.2);border-radius:12px;padding:15px;text-align:center;">
+          <div style="font-size:2rem;font-weight:700;color:var(--gold);">${history.length}</div>
+          <div style="font-size:0.75rem;color:#888;">Total Attempts</div>
+        </div>
+      </div>
+
+      <div class="profile-section-title">📋 Quiz History</div>
+      ${history.length === 0
+        ? `<p style="color:#666;font-size:0.85rem;">এখনো কোনো কুইজ দেননি।</p>`
+        : history.slice(0, 10).map(h => `
+          <div class="history-item">
+            <div>
+              <div style="font-weight:600;">${h.section} — Level ${h.level}</div>
+              <div style="color:#666;font-size:0.75rem;">${h.date}</div>
+            </div>
+            <div class="history-score ${h.passed ? 'pass' : 'fail'}">${h.score}% ${h.passed ? '✓' : '✗'}</div>
+          </div>`).join('')}
+
+      <div class="profile-section-title">⚙️ Account Settings</div>
+      <div class="profile-actions">
+        <button class="profile-action-btn" onclick="openEditProfile()">✏️ Edit Profile</button>
+        <button class="profile-action-btn" onclick="openModal('changePwModal')">🔄 Change Password</button>
+        <button class="profile-action-btn" onclick="openModal('forgotModal')">🔑 Forgot Password</button>
+        <button class="profile-action-btn danger" onclick="doLogout()">🚪 Logout</button>
+      </div>
+      <div style="margin-top:16px;text-align:center;">
+        <button class="hdr-btn" onclick="showingProfile=false;renderAll();">← Back to Learning</button>
+      </div>
+    </div>`;
+}
+
+function openEditProfile() {
+  document.getElementById('epName').value = currentUser.name || '';
+  document.getElementById('epAddress').value = currentUser.address || '';
+  document.getElementById('epPic').value = currentUser.pic || '';
+  hideMsg('epError');
+  openModal('editProfileModal');
+}
+
+// ===================================================
+//  AUDIO
+// ===================================================
+function playAudio(text) {
+  let existing = document.getElementById('googleTTSAudio');
+  if (existing) { existing.pause(); existing.remove(); }
+  const clean = encodeURIComponent(text.replace(/\[.*?\]/g, '').replace(/\+/g, '').trim());
+  const audio = new Audio(`https://translate.google.com/translate_tts?ie=UTF-8&q=${clean}&tl=en-gb&client=tw-ob`);
+  audio.id = 'googleTTSAudio';
+  audio.playbackRate = 0.85;
+  audio.play().catch(() => {
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'en-GB';
+    window.speechSynthesis.speak(utter);
+  });
+}
+
+// ===================================================
+//  UTILITIES
+// ===================================================
+function shuffleArray(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// ===================================================
+//  INIT
+// ===================================================
+window.onload = () => {
+  currentUser = getCurrentUser();
+  updateHeader();
+  renderAll();
+};
+</script>
+</body>
+</html>
+
+
